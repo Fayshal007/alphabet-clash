@@ -22,7 +22,7 @@
 
 
         <!------------------------- playground ------------------------->
-        <div class="space-y-9 pt-16">
+        <div class="space-y-9 pt-16 hidden">
             <!-- screen -->
             <div>
                 <div class="artboard artboard-horizontal phone-6 mx-auto text-white border-[20px] border-[#090d31cc] rounded-lg bg-[#ffffffBB] flex justify-center items-center"> <span>1024×320</span></div>
@@ -73,9 +73,17 @@
 
 
         
-        <!------------------------- part three ------------------------->
-        <div>
-
+        <!------------------------- Score card ------------------------->
+        <div class="min-h-screen flex justify-center items-center text-white text-center ">
+            <div class="card w-80 glass">
+                <div class="card-body space-y-4">
+                  <h2 class="font-extrabold text-5xl">Score: <span>14</span></h2>
+                  <div class="card-actions justify-center">
+                    <button class="btn bg-white text-black font-bold">Play again</button>
+                  </div>
+                  <p>Practice will make you Pro</p>
+                </div>
+              </div>
         </div>
     </main>
 </body>
