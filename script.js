@@ -17,3 +17,8 @@ function randomAlphabets() {
     const randomAlphabet = alphabets[index];
     return randomAlphabet;
 }
+
+function colorTheKey(element) {
+    const alphabetKey = document.getElementById(element);
+    alphabetKey.style.backgroundColor = "tomato"
+}

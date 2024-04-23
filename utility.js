@@ -1,6 +1,8 @@
 function continueGame() {
     const alphabet = randomAlphabets()
-    console.log(alphabet);
+    colorTheKey(alphabet)
+    const aphabetShow = document.getElementById('aphabet-show')
+    aphabetShow.innerText = alphabet
 }
 
 
