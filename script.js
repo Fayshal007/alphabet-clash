@@ -12,8 +12,8 @@ function randomAlphabets() {
     const alphabets = alphabetString.split('')
 
 
-    const randomNumber = Math.random()*25;
-    const index =  Math.round(randomNumber);
+    const randomNumber = Math.random() * 25;
+    const index = Math.round(randomNumber);
     const randomAlphabet = alphabets[index];
     return randomAlphabet;
 }
@@ -22,14 +22,34 @@ function colorTheKey(element) {
     const alphabetKey = document.getElementById(element);
     alphabetKey.style.backgroundColor = "tomato"
 }
-
-document.addEventListener('keyup', matchkey);
-function matchkey(event) {
-    const keyPressed = event.key;
-    const screenalphabet = document.getElementById('aphabet-show').innerText;
-    if (keyPressed.toLowerCase() === screenalphabet.toLowerCase()) {
-        console.log('u win');
-    } else {
-        console.log('u lose');
-    }
+function removeColorTheKey(element) {
+    const alphabetKey = document.getElementById(element);
+    alphabetKey.style.backgroundColor = "white"
 }
+
+document.addEventListener('keyup', function matchkey(event) {
+
+    const keyPressed = event.key;
+    if (keyPressed === 'Escape') {
+        gameOver()
+    }
+
+    const screenalphabet = document.getElementById('aphabet-show').innerText;
+
+    if (keyPressed.toLowerCase() === screenalphabet.toLowerCase()) {
+        const scoreValue = getTextElementByID('score')
+        const newScore = scoreValue + 1;
+        setTextElementValueByID('score', newScore)
+        setTextElementValueByID('final-score', newScore)
+        continueGame();
+        removeColorTheKey(keyPressed.toLowerCase());
+    } else {
+        const lifeValue = getTextElementByID('life')
+        const newLife = lifeValue - 1;
+        setTextElementValueByID('life', newLife)
+        if (newLife === 0) {
+            gameOver()
+        }
+    }
+});
+

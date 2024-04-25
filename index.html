@@ -25,7 +25,7 @@
         <div id="playground" class="space-y-9 pt-16 hidden">
             <!-- screen -->
             <div>
-                <div class="artboard artboard-horizontal phone-6 mx-auto text-white border-[20px] border-[#090d31cc] rounded-lg bg-[#ffffffBB] flex justify-center items-center"> <span id="aphabet-show" class="text-5xl lg:text-9xl text-black font-semibold uppercase">1024×320</span></div>
+                <div class="artboard artboard-horizontal phone-6 mx-auto text-white border-[20px] border-[#090d31cc] rounded-lg bg-[#ffffffBB] flex justify-center items-center"> <span id="aphabet-show" class="text-5xl lg:text-9xl text-black font-semibold uppercase"></span></div>
             </div>
             <!-- keyboard -->
             <div>
@@ -65,8 +65,8 @@
             </div>
             <!-- life score -->
             <div class="flex justify-between mx-auto w-3/5">
-                <div class="badge bg-[#894189] border-none p-4 text-white space-x-3 font-extrabold"><p>Like</p> <img src="images/Group 23.png" alt=""> <span>1</span> </div>
-                <div class="badge bg-[#360490] border-none p-4 text-white space-x-3 font-extrabold"><p>Score</p> <img src="images/monetization_on.png" alt=""> <span>1</span></div>
+                <div class="badge bg-[#894189] border-none p-4 text-white space-x-3 font-extrabold"><p>Life</p> <img src="images/Group 23.png" alt=""> <span id="life">5</span> </div>
+                <div class="badge bg-[#360490] border-none p-4 text-white space-x-3 font-extrabold"><p>Score</p> <img src="images/monetization_on.png" alt=""> <span id="score">0</span></div>
             </div>
 
         </div>
@@ -74,12 +74,13 @@
 
         
         <!------------------------- Score card ------------------------->
-        <div class="min-h-screen flex justify-center items-center text-white text-center hidden">
+        <div id="score-card" class="min-h-screen flex justify-center items-center text-white text-center hidden">
             <div class="card w-80 glass">
                 <div class="card-body space-y-4">
-                  <h2 class="font-extrabold text-5xl">Score: <span>14</span></h2>
+                  <h2 class="text-3xl font-bold">Game Over!</h2>
+                  <h2 class="font-extrabold text-5xl">Score: <span id="final-score">0</span></h2>
                   <div class="card-actions justify-center">
-                    <button class="btn bg-white text-black font-bold">Play again</button>
+                    <button onclick="play()" class="btn bg-white text-black font-bold">Play again</button>
                   </div>
                   <p>Practice will make you Pro</p>
                 </div>
